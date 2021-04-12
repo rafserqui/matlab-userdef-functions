@@ -1,5 +1,22 @@
 function [tbl] = stats_summary(x,which_stats,col_names,omit_nans)
-    
+%---------------------------------------------------------------
+% Rafael Serrano-Quintero (2021)
+%---------------------------------------------------------------
+% STATS_SUMMARY     A short function to compute summary statistics
+% and present them in a table. Option to choose descriptives and
+% to add variable names, as well as an option to omit NaNs.
+%---------------------------------------------------------------
+% Inputs:  
+%        x: a matrix or vector of data. If a matrix, each column
+%           is treated as a separate variable.
+%        which_stats: a cell array selecting the descriptive stats
+%           among those I have chosen (min, mean, median, max, std).
+%        col_names: a cell array with same size as columns of x with
+%           variable names. Optional.
+%        omit_nans: an option to omit NaNs in computations.
+% Outputs:
+%        tbl: a table with the summary statistics provided.
+%---------------------------------------------------------------
     % Extract columns of data (a column is a variable)
     [~,cls] = size(x);
     
